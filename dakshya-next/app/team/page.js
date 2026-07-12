@@ -94,16 +94,21 @@ export default function TeamPage() {
               <span className="text-xs text-brandTextMuted font-mono mt-1 font-light">{member.role}</span>
 
               <div className="flex items-center gap-4 mt-6 text-slate-400 group-hover:text-brandTextDark transition duration-300">
-                <a href={member.social.linkedin} className="hover:text-accentPrimary transition" aria-label={`${member.name} LinkedIn`}>
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                <a href={member.social.github} className="hover:text-accentPrimary transition" aria-label={`${member.name} GitHub`}>
-                  <Github className="w-4 h-4" />
-                </a>
-
-                <a href={`mailto:${member.social.email}`} className="hover:text-accentPrimary transition" aria-label={`Email ${member.name}`}>
-                  <Mail className="w-4 h-4" />
-                </a>
+                {member.social.linkedin && member.social.linkedin !== "#" && (
+                  <a href={member.social.linkedin} className="hover:text-accentPrimary transition" aria-label={`${member.name} LinkedIn`}>
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                )}
+                {member.social.github && member.social.github !== "#" && (
+                  <a href={member.social.github} className="hover:text-accentPrimary transition" aria-label={`${member.name} GitHub`}>
+                    <Github className="w-4 h-4" />
+                  </a>
+                )}
+                {member.social.email && member.social.email !== "#" && (
+                  <a href={`mailto:${member.social.email}`} className="hover:text-accentPrimary transition" aria-label={`Email ${member.name}`}>
+                    <Mail className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

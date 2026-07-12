@@ -147,8 +147,8 @@ export const DAKSHYA_DATA = {
       name: "ADITYA PATIL",
       role: "Male Lead",
       domain: "Leadership",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=500&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "aditya@dakshya.club" }
+      image: "/aditya.png",
+      social: { email: "patiladitya0160@gmail.com" }
     },
     {
       name: "ANOKHI PATIL",
