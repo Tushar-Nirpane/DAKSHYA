@@ -1,5 +1,6 @@
 // DAKSHYA Central Data Store
-const DAKSHYA_DATA = {
+
+export const DAKSHYA_DATA = {
   stats: [
     { label: "Active Core Members", value: "18", description: "Designers, builders & programmers" },
     { label: "Labs & Workshops Done", value: "12+", description: "100% hands-on sessions" },
