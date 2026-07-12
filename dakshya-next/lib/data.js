@@ -128,8 +128,13 @@ export const DAKSHYA_DATA = {
       name: "TUSHAR NIRPANE",
       role: "President",
       domain: "Leadership",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=500&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "tushar@dakshya.club" }
+      image: "/tushar.jpg",
+      social: {
+        linkedin: "https://www.linkedin.com/in/tushar-nirpane-a85aab394/",
+        github: "https://github.com/Tushar-Nirpane",
+        twitter: "#",
+        email: "tusharnirpane07@gmail.com"
+      }
     },
     {
       name: "MANSVI PATIL",
