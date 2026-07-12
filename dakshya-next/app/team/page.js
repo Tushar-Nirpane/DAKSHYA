@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Linkedin, Github, Twitter, Mail, User } from "lucide-react";
+import { Linkedin, Github, Mail, User } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { DAKSHYA_DATA } from "@/lib/data";
 import { springSoft } from "@/lib/motion";
@@ -21,7 +21,7 @@ export default function TeamPage() {
 
   return (
     <main className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
         <Reveal>
           <span className="text-xs font-mono tracking-widest text-accentPrimary uppercase font-semibold block">
             // Core Organization
@@ -100,9 +100,7 @@ export default function TeamPage() {
                 <a href={member.social.github} className="hover:text-accentPrimary transition" aria-label={`${member.name} GitHub`}>
                   <Github className="w-4 h-4" />
                 </a>
-                <a href={member.social.twitter} className="hover:text-accentPrimary transition" aria-label={`${member.name} Twitter`}>
-                  <Twitter className="w-4 h-4" />
-                </a>
+
                 <a href={`mailto:${member.social.email}`} className="hover:text-accentPrimary transition" aria-label={`Email ${member.name}`}>
                   <Mail className="w-4 h-4" />
                 </a>
