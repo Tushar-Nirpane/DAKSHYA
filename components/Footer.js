@@ -52,14 +52,14 @@ export default function Footer() {
             <a href="#" className="hover:text-accentPrimary transition" aria-label="Twitter">
               <Twitter className="w-4 h-4" />
             </a>
-            <a href="#https://www.instagram.com/thedakshya007?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:text-accentPrimary transition" aria-label="Instagram">
+            <a href="https://www.instagram.com/thedakshya007?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:text-accentPrimary transition" aria-label="Instagram">
               <Instagram className="w-4 h-4" />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-brandBorder flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] text-brandTextMuted uppercase tracking-widest">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-brandBorder flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] text-brandTextMuted uppercase tracking-w[...]">
         <span>&copy; 2026 DAKSHYA Technical Club. All rights reserved.</span>
         <span>Secure HTTPS Connection</span>
       </div>
