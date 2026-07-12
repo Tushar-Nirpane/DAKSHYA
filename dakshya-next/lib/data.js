@@ -2,7 +2,7 @@
 
 export const DAKSHYA_DATA = {
   stats: [
-    { label: "Active Core Members", value: "18", description: "Designers, builders & programmers" },
+    { label: "Active Core Members", value: "15", description: "Designers, builders & programmers" },
     { label: "Labs & Workshops Done", value: "12+", description: "100% hands-on sessions" },
     { label: "Students Impacted", value: "500+", description: "Across campuses & departments" },
     { label: "Practical Learning", value: "100%", description: "No dry theory, only active building" }
@@ -117,139 +117,117 @@ export const DAKSHYA_DATA = {
       type: "video",
       category: "Event Highlights",
       title: "DAKSHYA Lab Showcase Reel",
-      url: "https://www.w3schools.com/html/mov_bbb.mp4", // Free HTML5 sample video
+      url: "https://www.w3schools.com/html/mov_bbb.mp4",
       thumbnail: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=80",
       description: "An overview of our hackerspace, equipment inventory, and interactive project setups."
     }
   ],
 
   team: [
-    // 18 Core Members
     {
-      name: "Tushar Gupta",
-      role: "Club President & Lead Architect",
-      domain: "Coordination",
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80",
+      name: "TUSHAR NIRPANE",
+      role: "President",
+      domain: "Leadership",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=500&q=80",
       social: { linkedin: "#", github: "#", twitter: "#", email: "tushar@dakshya.club" }
     },
     {
-      name: "Dr. A. K. Sharma",
-      role: "Faculty Coordinator & Mentor",
-      domain: "Coordination",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "sharma@dakshya.club" }
+      name: "MANSVI PATIL",
+      role: "Female Lead",
+      domain: "Leadership",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "mansvi@dakshya.club" }
     },
     {
-      name: "Riya Verma",
-      role: "Vice President & Event Head",
-      domain: "Coordination",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "riya@dakshya.club" }
-    },
-    {
-      name: "Karan Johar",
-      role: "Robotics Tech Lead",
-      domain: "Robotics",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "karan@dakshya.club" }
-    },
-    {
-      name: "Meera Sen",
-      role: "Software Guild Lead",
-      domain: "Software",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "meera@dakshya.club" }
-    },
-    {
-      name: "Aditya Roy",
-      role: "Hardware & PCB Expert",
-      domain: "Hardware",
-      image: "https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=300&q=80",
+      name: "ADITYA PATIL",
+      role: "Male Lead",
+      domain: "Leadership",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=500&q=80",
       social: { linkedin: "#", github: "#", twitter: "#", email: "aditya@dakshya.club" }
     },
     {
-      name: "Nikhil Malhotra",
-      role: "ROS Developer",
-      domain: "Robotics",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "nikhil@dakshya.club" }
+      name: "ANOKHI PATIL",
+      role: "Female Co-Lead",
+      domain: "Leadership",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "anokhi@dakshya.club" }
     },
     {
-      name: "Ananya Panday",
-      role: "Embedded Systems Engineer",
-      domain: "Hardware",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "ananya@dakshya.club" }
+      name: "HIMANSHU YERAWAR",
+      role: "Male Co-Lead",
+      domain: "Leadership",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "himanshu@dakshya.club" }
     },
     {
-      name: "Ishaan Khatter",
-      role: "Full Stack Web Developer",
-      domain: "Software",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "ishaan@dakshya.club" }
+      name: "UZZAM NAIK",
+      role: "Technical Lead",
+      domain: "Technical",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "uzzam@dakshya.club" }
     },
     {
-      name: "Sanjana Sanghi",
-      role: "UI/UX Designer",
-      domain: "Software",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "sanjana@dakshya.club" }
+      name: "YASHRAJ BHAGWAT",
+      role: "Web Developer",
+      domain: "Technical",
+      image: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "yashraj@dakshya.club" }
     },
     {
-      name: "Vikram Seth",
-      role: "Control Systems Lead",
-      domain: "Robotics",
-      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "vikram@dakshya.club" }
+      name: "PRACHI PATNE",
+      role: "Media Head",
+      domain: "Media",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "prachi@dakshya.club" }
     },
     {
-      name: "Preeti Singh",
-      role: "IoT Specialist",
-      domain: "Hardware",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "preeti@dakshya.club" }
+      name: "YASH SOLANKE",
+      role: "Editor",
+      domain: "Media",
+      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "yash.s@dakshya.club" }
     },
     {
-      name: "Rahul Bose",
-      role: "Treasurer & Outreach",
-      domain: "Coordination",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "rahul@dakshya.club" }
+      name: "MOIZ SHAIKH",
+      role: "Videographer",
+      domain: "Media",
+      image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "moiz@dakshya.club" }
     },
     {
-      name: "Sneha Nair",
-      role: "DevOps & Cloud Engineer",
-      domain: "Software",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "sneha@dakshya.club" }
+      name: "ATHARVA PADAMWAR",
+      role: "Photographer",
+      domain: "Media",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "atharva@dakshya.club" }
     },
     {
-      name: "Arjun Rampal",
-      role: "CAD & Mechanical Designer",
-      domain: "Robotics",
-      image: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "arjun@dakshya.club" }
+      name: "AARYA SHELAR",
+      role: "Documentary Lead",
+      domain: "Media",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "aarya@dakshya.club" }
     },
     {
-      name: "Tara Sutaria",
-      role: "PR & Event Manager",
-      domain: "Coordination",
-      image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "tara@dakshya.club" }
+      name: "GANESH YERAWAR",
+      role: "Documentary Team",
+      domain: "Media",
+      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "ganesh@dakshya.club" }
     },
     {
-      name: "Kabir Mehta",
-      role: "RF & Wireless Systems Lead",
-      domain: "Hardware",
-      image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "kabir@dakshya.club" }
+      name: "NANDINI SAWANT",
+      role: "Documentary Team",
+      domain: "Media",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "nandini@dakshya.club" }
     },
     {
-      name: "Neha Kakkar",
-      role: "Computer Vision Engineer",
-      domain: "Software",
-      image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=300&q=80",
-      social: { linkedin: "#", github: "#", twitter: "#", email: "neha@dakshya.club" }
+      name: "KARTIK MODIWALE",
+      role: "Volunteer",
+      domain: "Volunteers",
+      image: "https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=400&h=500&q=80",
+      social: { linkedin: "#", github: "#", twitter: "#", email: "kartik@dakshya.club" }
     }
   ]
 };

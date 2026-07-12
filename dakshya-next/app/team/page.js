@@ -2,17 +2,17 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Linkedin, Github, Twitter, Mail } from "lucide-react";
+import { Linkedin, Github, Twitter, Mail, User } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { DAKSHYA_DATA } from "@/lib/data";
 import { springSoft } from "@/lib/motion";
 
-const DOMAINS = ["All", "Robotics", "Hardware", "Software", "Coordination"];
+const DOMAINS = ["All", "Leadership", "Technical", "Media", "Volunteers"];
 const DOT_COLOR = {
-  Robotics: "bg-red-500",
-  Hardware: "bg-orange-500",
-  Software: "bg-accentPrimary",
-  Coordination: "bg-yellow-500",
+  Leadership: "bg-red-500",
+  Technical: "bg-accentPrimary",
+  Media: "bg-yellow-500",
+  Volunteers: "bg-orange-500",
 };
 
 export default function TeamPage() {
@@ -21,17 +21,17 @@ export default function TeamPage() {
 
   return (
     <main className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
         <Reveal>
           <span className="text-xs font-mono tracking-widest text-accentPrimary uppercase font-semibold block">
             // Core Organization
           </span>
         </Reveal>
         <Reveal delay={0.05} as="h1" className="text-3xl sm:text-4xl font-extrabold text-brandTextDark tracking-tight">
-          The Core 18
+          The Core Team
         </Reveal>
         <Reveal delay={0.1} as="p" className="text-brandTextMuted font-light">
-          Meet the 18 core team members organizing and leading technical domains, workshops, and lab operations.
+          Meet our core team members organizing and leading technical domains, workshops, and lab operations.
         </Reveal>
 
         <Reveal delay={0.15} className="flex flex-wrap items-center justify-center gap-2 pt-4 font-mono text-xs">
@@ -62,23 +62,36 @@ export default function TeamPage() {
               exit={{ opacity: 0, scale: 0.95 }}
               whileHover={{ y: -6 }}
               transition={springSoft}
-              className="bg-white p-6 rounded-2xl flex flex-col items-center text-center group relative overflow-hidden border border-brandBorder shadow-sm hover:border-accentPrimary/30 hover:shadow-md transition-[border-color,box-shadow] duration-300"
+              className="bg-white p-4 rounded-2xl flex flex-col items-center text-center group relative overflow-hidden border border-brandBorder shadow-sm hover:border-accentPrimary/30 hover:shadow-md transition-[border-color,box-shadow] duration-300"
             >
               <div className="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-accentPrimary/5 to-transparent rounded-full" />
 
-              <div className="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-accentPrimary via-accentSecondary to-slate-200 relative mb-4">
-                <img src={member.image} alt={member.name} className="w-full h-full object-cover rounded-full" />
-                <span className={`absolute bottom-1 right-1 w-4 h-4 rounded-full border-2 border-white ${DOT_COLOR[member.domain]}`} />
+              {/* Large aspect-[4/5] rectangular slot for full-body or half-body member photo */}
+              <div className="w-full aspect-[4/5] rounded-xl bg-slate-50 relative mb-4 border border-brandBorder overflow-hidden group/image flex items-center justify-center">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover group-hover/image:scale-103 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="text-slate-400 flex flex-col items-center gap-2">
+                    <User className="w-8 h-8 opacity-40" />
+                    <span className="text-[10px] font-mono opacity-50 uppercase">[ Full Photo Slot ]</span>
+                  </div>
+                )}
+                
+                {/* Domain indicator tag overlay */}
+                <span className={`absolute bottom-2 right-2 px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider rounded border border-white/20 text-white bg-black/60 backdrop-blur-sm z-10 flex items-center gap-1`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${DOT_COLOR[member.domain]}`} />
+                  {member.domain}
+                </span>
               </div>
 
               <h4 className="text-base font-bold text-brandTextDark group-hover:text-accentPrimary transition duration-200">
                 {member.name}
               </h4>
               <span className="text-xs text-brandTextMuted font-mono mt-1 font-light">{member.role}</span>
-
-              <div className="inline-flex items-center gap-1.5 mt-3 px-2.5 py-0.5 rounded-full bg-slate-50 border border-brandBorder text-[10px] font-mono uppercase tracking-widest text-slate-500">
-                {member.domain}
-              </div>
 
               <div className="flex items-center gap-4 mt-6 text-slate-400 group-hover:text-brandTextDark transition duration-300">
                 <a href={member.social.linkedin} className="hover:text-accentPrimary transition" aria-label={`${member.name} LinkedIn`}>
