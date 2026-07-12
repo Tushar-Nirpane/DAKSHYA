@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DAKSHYA Workshops & Labs — past and upcoming technical hands-on training sessions." />
+    <title>Workshops & Labs | DAKSHYA</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandBg: '#FCF9F2',
+              brandCard: '#FFFFFF',
+              brandBorder: '#E6E1D8',
+              brandTextDark: '#1C1917',
+              brandTextMuted: '#57534E',
+              accentPrimary: '#0284C7',
+              accentSecondary: '#4F46E5',
+              goldHighlight: '#D97706'
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+    <!-- AlpineJS for state management -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      .tech-grid {
+        background-size: 30px 30px;
+        background-image: 
+          linear-gradient(to right, rgba(2, 132, 199, 0.02) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(2, 132, 199, 0.02) 1px, transparent 1px);
+      }
+    </style>
+  </head>
+  <body class="bg-brandBg text-brandTextMuted font-sans tech-grid min-h-screen relative overflow-x-hidden" x-data="{ 
+    mobileMenuOpen: false,
+    registrationModalOpen: false,
+    selectedWorkshopTitle: '',
+    successAlert: false,
+    alertMessage: ''
+  }">
+
+    <!-- Top Ambient Light Blob -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[70vw] h-[250px] bg-gradient-to-b from-accentPrimary/5 via-accentSecondary/5 to-transparent blur-[100px] pointer-events-none -z-10"></div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-brandBorder transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accentPrimary to-accentSecondary flex items-center justify-center shadow-md relative overflow-hidden">
+              <div class="absolute inset-0.5 bg-white rounded-[6px] flex items-center justify-center">
+                <i data-lucide="cpu" class="w-5 h-5 text-accentPrimary group-hover:rotate-45 transition-transform duration-500"></i>
+              </div>
+            </div>
+            <div>
+              <span class="font-mono text-2xl font-black tracking-wider text-brandTextDark">DAKSHYA</span>
+              <span class="block text-[9px] font-mono tracking-widest text-goldHighlight uppercase font-semibold">Tech & Robotics Club</span>
+            </div>
+          </a>
+
+          <!-- Navigation Links -->
+          <nav class="hidden md:flex items-center gap-8 font-mono text-sm uppercase tracking-wider">
+            <a href="index.html" class="text-brandTextMuted hover:text-brandTextDark transition duration-200 pb-1">Home</a>
+            <a href="about.html" class="text-brandTextMuted hover:text-brandTextDark transition duration-200 pb-1">About</a>
+            <a href="workshops.html" class="text-brandTextDark font-semibold border-b-2 border-accentPrimary pb-1">Workshops</a>
+            <a href="gallery.html" class="text-brandTextMuted hover:text-brandTextDark transition duration-200 pb-1">Gallery</a>
+            <a href="team.html" class="text-brandTextMuted hover:text-brandTextDark transition duration-200 pb-1">Team</a>
+            <a href="contact.html" class="text-brandTextMuted hover:text-brandTextDark transition duration-200 pb-1">Contact</a>
+          </nav>
+
+          <!-- Action Button -->
+          <div class="hidden md:block">
+            <a href="workshops.html" class="px-6 py-2.5 rounded-lg bg-accentPrimary hover:bg-accentPrimary/90 text-white font-mono font-medium shadow-sm transition duration-300 uppercase text-xs tracking-wider">
+              Explore Workshops
+            </a>
+          </div>
+
+          <!-- Mobile hamburger toggle -->
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-brandTextMuted hover:text-brandTextDark transition duration-200 focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6" x-show="!mobileMenuOpen"></i>
+            <i data-lucide="x" class="w-6 h-6" x-show="mobileMenuOpen" style="display: none;"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div x-show="mobileMenuOpen" 
+           x-transition:enter="transition ease-out duration-200"
+           x-transition:enter-start="opacity-0 -translate-y-4"
+           x-transition:enter-end="opacity-100 translate-y-0"
+           x-transition:leave="transition ease-in duration-150"
+           x-transition:leave-start="opacity-100 translate-y-0"
+           x-transition:leave-end="opacity-0 -translate-y-4"
+           class="md:hidden bg-white border-b border-brandBorder py-4 px-6 absolute top-20 left-0 w-full shadow-lg"
+           style="display: none;">
+        <nav class="flex flex-col gap-4 font-mono text-sm uppercase tracking-wider">
+          <a href="index.html" class="text-brandTextMuted hover:text-brandTextDark py-2 transition duration-200">Home</a>
+          <a href="about.html" class="text-brandTextMuted hover:text-brandTextDark py-2 transition duration-200">About</a>
+          <a href="workshops.html" class="text-brandTextDark font-bold py-2 transition duration-200">Workshops</a>
+          <a href="gallery.html" class="text-brandTextMuted hover:text-brandTextDark py-2 transition duration-200">Gallery</a>
+          <a href="team.html" class="text-brandTextMuted hover:text-brandTextDark py-2 transition duration-200">Team</a>
+          <a href="contact.html" class="text-brandTextMuted hover:text-brandTextDark py-2 transition duration-200">Contact</a>
+          <a href="workshops.html" class="mt-2 text-center py-2.5 rounded-lg bg-accentPrimary text-white font-mono font-medium hover:bg-accentPrimary/90 transition duration-300 uppercase text-xs tracking-wider">
+            Explore Workshops
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- WORKSHOPS LISTING -->
+    <main class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="max-w-3xl space-y-4 mb-16">
+        <span class="text-xs font-mono tracking-widest text-accentPrimary uppercase font-semibold block">// Academy Hub</span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-brandTextDark tracking-tight font-sans">Hands-on Workshops & Practical Labs</h1>
+        <p class="text-brandTextMuted text-lg font-light leading-relaxed">
+          Sign up to attend our upcoming sessions or view archives and takeaway slides from our previous engineering events.
+        </p>
+      </div>
+
+      <!-- Workshop Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-data="{ workshops: DAKSHYA_DATA.workshops }">
+        <template x-for="workshop in workshops" :key="workshop.id">
+          <div class="bg-white rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-md transition duration-300 border border-brandBorder group">
+            <div>
+              <!-- Image with category tag -->
+              <div class="h-48 overflow-hidden relative">
+                <img :src="workshop.image" :alt="workshop.title" class="w-full h-full object-cover group-hover:scale-102 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                
+                <!-- Status Badge -->
+                <div class="absolute top-4 right-4 font-mono text-[10px] tracking-wider uppercase font-semibold px-2.5 py-1 rounded-full border bg-white/95"
+                     :class="workshop.status === 'Upcoming' ? 'border-green-300 text-green-700' : 'border-slate-300 text-slate-600'">
+                  <span x-text="workshop.status"></span>
+                </div>
+
+                <!-- Domain tag -->
+                <div class="absolute bottom-4 left-4 font-mono text-xs font-semibold px-2 py-0.5 rounded bg-accentPrimary text-white shadow-sm" x-text="workshop.category">
+                </div>
+              </div>
+
+              <!-- Content details -->
+              <div class="p-6 space-y-4">
+                <h3 class="text-lg font-bold text-brandTextDark group-hover:text-accentPrimary transition duration-200" x-text="workshop.title"></h3>
+                <p class="text-sm text-brandTextMuted font-light leading-relaxed" x-text="workshop.description"></p>
+                
+                <!-- Takeaways list -->
+                <div class="space-y-2 pt-2 border-t border-slate-100">
+                  <span class="block text-[10px] font-mono text-slate-400 uppercase tracking-widest">Key Takeaways</span>
+                  <div class="flex flex-wrap gap-1.5">
+                    <template x-for="takeaway in workshop.takeaways">
+                      <span class="text-[11px] font-mono bg-slate-50 border border-slate-200 rounded px-2 py-0.5 text-brandTextMuted" x-text="takeaway"></span>
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Footer action links -->
+            <div class="p-6 pt-0 border-t border-slate-100 mt-4 flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400" x-text="workshop.date"></span>
+              <button @click="selectedWorkshopTitle = workshop.title; registrationModalOpen = true" 
+                      class="text-xs font-mono text-accentPrimary hover:underline transition uppercase tracking-wider flex items-center gap-1 font-semibold">
+                <span x-text="workshop.status === 'Upcoming' ? 'Register' : 'Slides'"></span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-brandBorder bg-white py-12 px-4 sm:px-6 lg:px-8 mt-24">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+        <div class="md:col-span-6 space-y-4">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-gradient-to-br from-accentPrimary to-accentSecondary flex items-center justify-center">
+              <i data-lucide="cpu" class="w-4 h-4 text-white"></i>
+            </div>
+            <span class="font-mono text-xl font-black text-brandTextDark">DAKSHYA</span>
+          </a>
+          <p class="text-xs text-brandTextMuted max-w-sm leading-relaxed font-light">
+            Empowering student engineers with hands-on labs, hardware workshops, PCB routing, and high-performance programming.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h5 class="text-xs font-mono uppercase tracking-widest text-brandTextDark font-bold">// Navigation</h5>
+          <ul class="space-y-2 text-xs font-mono text-brandTextMuted">
+            <li><a href="index.html" class="hover:text-accentPrimary transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-accentPrimary transition">About Club</a></li>
+            <li><a href="workshops.html" class="hover:text-accentPrimary transition">Workshops</a></li>
+            <li><a href="gallery.html" class="hover:text-accentPrimary transition">Gallery</a></li>
+            <li><a href="team.html" class="hover:text-accentPrimary transition">Core Team</a></li>
+            <li><a href="contact.html" class="hover:text-accentPrimary transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h5 class="text-xs font-mono uppercase tracking-widest text-brandTextDark font-bold">// Socials</h5>
+          <div class="flex items-center gap-3 text-brandTextMuted">
+            <a href="#" class="hover:text-accentPrimary transition"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#" class="hover:text-accentPrimary transition"><i data-lucide="github" class="w-4 h-4"></i></a>
+            <a href="#" class="hover:text-accentPrimary transition"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+            <a href="#" class="hover:text-accentPrimary transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto pt-8 border-t border-brandBorder flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] text-brandTextMuted uppercase tracking-widest">
+        <span>&copy; 2026 DAKSHYA Technical Club. All rights reserved.</span>
+        <span>Secure HTTPS Connection</span>
+      </div>
+    </footer>
+
+    <!-- INTERACTIVE WORKSHOP REGISTRATION MODAL -->
+    <div x-show="registrationModalOpen" 
+         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm"
+         style="display: none;"
+         @keydown.escape.window="registrationModalOpen = false">
+      
+      <div class="w-full max-w-lg bg-white rounded-2xl overflow-hidden border border-brandBorder shadow-xl"
+           @click.away="registrationModalOpen = false">
+        
+        <div class="p-6 border-b border-brandBorder flex items-center justify-between">
+          <div class="flex items-center gap-2 text-accentPrimary font-mono">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+            <span class="text-sm font-bold uppercase tracking-wider">Registration Form</span>
+          </div>
+          <button @click="registrationModalOpen = false" class="text-slate-400 hover:text-brandTextDark transition">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="p-6 space-y-6" x-data="{
+          fullName: '',
+          emailAddress: '',
+          dept: '',
+          regStatus: 'idle',
+          submitRegistration() {
+            this.regStatus = 'submitting';
+            setTimeout(() => {
+              this.regStatus = 'success';
+              setTimeout(() => {
+                this.fullName = '';
+                this.emailAddress = '';
+                this.dept = '';
+                this.regStatus = 'idle';
+                $data.registrationModalOpen = false;
+                $data.successAlert = true;
+                $data.alertMessage = 'Registration submitted successfully!';
+                setTimeout(() => { $data.successAlert = false; }, 5000);
+              }, 1500);
+            }, 1500);
+          }
+        }">
+          <div class="p-4 rounded-lg bg-slate-50 border border-brandBorder text-xs font-mono space-y-1">
+            <span class="text-slate-400 uppercase tracking-widest block font-bold">// Target Event</span>
+            <div class="text-brandTextDark text-sm font-semibold mt-1" x-text="$data.selectedWorkshopTitle"></div>
+          </div>
+
+          <form @submit.prevent="submitRegistration()" class="space-y-4 font-mono text-xs">
+            <div class="space-y-1.5">
+              <label class="text-[10px] text-slate-400 uppercase block font-bold">Full Name //</label>
+              <input type="text" x-model="fullName" required placeholder="Alan Turing" 
+                     class="w-full bg-slate-50 border border-brandBorder focus:border-accentPrimary rounded-lg px-4 py-2.5 outline-none text-brandTextDark transition" />
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-[10px] text-slate-400 uppercase block font-bold">Email Address //</label>
+              <input type="email" x-model="emailAddress" required placeholder="turing@domain.com" 
+                     class="w-full bg-slate-50 border border-brandBorder focus:border-accentPrimary rounded-lg px-4 py-2.5 outline-none text-brandTextDark transition" />
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-[10px] text-slate-400 uppercase block font-bold">Department / Major //</label>
+              <select x-model="dept" required 
+                      class="w-full bg-slate-50 border border-brandBorder focus:border-accentPrimary rounded-lg px-4 py-2.5 outline-none text-brandTextDark transition">
+                <option value="" disabled selected>Select department major</option>
+                <option value="Computer Science">Computer Science & Engineering</option>
+                <option value="Electronics">Electronics & Communications</option>
+                <option value="Robotics">Robotics & Automation</option>
+                <option value="Mechanical">Mechanical Engineering</option>
+                <option value="Other">Other technical domain</option>
+              </select>
+            </div>
+
+            <!-- Submit buttons based on state -->
+            <button type="submit" :disabled="regStatus !== 'idle'"
+                    class="w-full py-3 rounded-lg bg-accentPrimary text-white font-bold hover:bg-accentPrimary/90 transition duration-300 uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+              <i x-show="regStatus === 'submitting'" data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>
+              <span x-text="regStatus === 'idle' ? 'Submit Registration' : regStatus === 'submitting' ? 'Submitting registration...' : 'Successfully Registered!'"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- TELEMETRY SUCCESS ALERT NOTIFICATION -->
+    <div x-show="successAlert" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 translate-y-4"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 translate-y-4"
+         class="fixed bottom-6 right-6 z-50 max-w-md bg-white p-4 rounded-xl shadow-lg border border-brandBorder flex items-start gap-3"
+         style="display: none;">
+      <div class="p-1 rounded bg-green-50 text-green-600">
+        <i data-lucide="check-circle" class="w-4 h-4"></i>
+      </div>
+      <div>
+        <h5 class="text-xs font-mono uppercase tracking-widest text-brandTextDark font-bold">Transmit Success</h5>
+        <p class="text-[11px] text-brandTextMuted font-mono mt-1" x-text="alertMessage"></p>
+      </div>
+      <button @click="successAlert = false" class="text-slate-400 hover:text-brandTextDark transition ml-auto">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <!-- Include DAKSHYA Central Data Store -->
+    <script src="data.js"></script>
+
+    <!-- Trigger dynamic Lucide Icon rendering -->
+    <script>
+      window.DAKSHYA_DATA = DAKSHYA_DATA;
+      
+      document.addEventListener("DOMContentLoaded", function() {
+        lucide.createIcons();
+      });
+      
+      document.addEventListener("alpine:initialized", () => {
+        lucide.createIcons();
+      });
+    </script>
+  </body>
+</html>
