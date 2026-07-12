@@ -51,7 +51,7 @@ export default function TeamPage() {
         </Reveal>
       </div>
 
-      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <AnimatePresence mode="popLayout">
           {visible.map((member) => (
             <motion.div
@@ -66,8 +66,8 @@ export default function TeamPage() {
             >
               <div className="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-accentPrimary/5 to-transparent rounded-full" />
 
-              {/* Large aspect-[4/5] rectangular slot for full-body or half-body member photo */}
-              <div className="w-full aspect-[4/5] rounded-xl bg-slate-50 relative mb-4 border border-brandBorder overflow-hidden group/image flex items-center justify-center">
+              {/* Large aspect-[2/3] rectangular slot for full-body or half-body member photo */}
+              <div className="w-full aspect-[2/3] rounded-xl bg-slate-50 relative mb-4 border border-brandBorder overflow-hidden group/image flex items-center justify-center">
                 {member.image ? (
                   <img
                     src={member.image}
