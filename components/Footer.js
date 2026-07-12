@@ -52,7 +52,7 @@ export default function Footer() {
             <a href="#" className="hover:text-accentPrimary transition" aria-label="Twitter">
               <Twitter className="w-4 h-4" />
             </a>
-            <a href="#" className="hover:text-accentPrimary transition" aria-label="Instagram">
+            <a href="#https://www.instagram.com/thedakshya007?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:text-accentPrimary transition" aria-label="Instagram">
               <Instagram className="w-4 h-4" />
             </a>
           </div>
